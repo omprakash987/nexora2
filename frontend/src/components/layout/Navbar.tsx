@@ -121,13 +121,7 @@ export default function Navbar() {
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          <Link
-            to="/#contact"
-            onClick={(e) => handleNavClick(e, '/#contact')}
-            className="px-6 py-2.5 rounded-full bg-brand-orange text-white text-sm font-medium hover:bg-[#e66e00] transition-all shadow-[0_0_20px_rgba(255,122,0,0.3)] hover:shadow-[0_0_30px_rgba(255,122,0,0.5)] transform hover:-translate-y-0.5"
-          >
-            Book a Call
-          </Link>
+         
         </div>
 
         {/* Mobile Toggle */}
@@ -162,13 +156,8 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link
-            to="/#contact"
-            onClick={(e) => handleNavClick(e, '/#contact')}
-            className="mt-4 text-center px-6 py-3 rounded-full bg-brand-orange text-white font-medium shadow-[0_0_20px_rgba(255,122,0,0.3)]"
-          >
-            Book a Call
-          </Link>
+           
+          
         </motion.div>
       )}
     </motion.nav>
