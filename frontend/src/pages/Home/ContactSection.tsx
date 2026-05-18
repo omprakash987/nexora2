@@ -28,7 +28,7 @@ export default function ContactSection() {
 
     try {
       const response = await fetch(
-        'http://localhost:5000/api/email/sendEmail',
+        'https://nexora2.onrender.com/api/email/sendEmail',
         {
           method: 'POST',
           headers: {
