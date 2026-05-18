@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
-import PlaceholderImage from '../../components/ui/PlaceholderImage';
+// import { Link } from 'react-router-dom';
+import { CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+// import PlaceholderImage from '../../components/ui/PlaceholderImage';
+import serviceLogo from '../../assets/servicelogo.png'
+
 
 export default function HeroSection() {
   const { scrollY } = useScroll();
@@ -22,7 +24,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[100svh] flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-svh flex items-center pt-20 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] bg-brand-orange/20 dark:bg-brand-orange/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-pulse" style={{ animationDuration: '8s' }} />
@@ -42,7 +44,7 @@ export default function HeroSection() {
         >
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200/50 dark:bg-white/5 border border-slate-300 dark:border-white/10 backdrop-blur-md mb-8">
             <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Award-Winning Digital Agency</span>
+            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Convert Your Idea Into Reality</span>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
@@ -55,17 +57,17 @@ export default function HeroSection() {
             We help brands grow through high-performance websites, AI automation, and modern digital experiences that feel like magic.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Link to="/contact" className="group relative px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-semibold overflow-hidden shadow-[0_0_40px_rgba(255,122,0,0.2)] dark:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-transform hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-orange to-brand-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative flex items-center justify-center gap-2 group-hover:text-white">
+          {/* <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-12"> */}
+            {/* <Link to="/contact" className="group relative px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-semibold overflow-hidden shadow-[0_0_40px_rgba(255,122,0,0.2)] dark:shadow-[0_0_40px_rgba(255,255,255,0.1)] transition-transform hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-orange to-brand-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
+              {/* <span className="relative flex items-center justify-center gap-2 group-hover:text-white">
                 Start a Project <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-            <Link to="/projects" className="px-8 py-4 rounded-full font-semibold border border-slate-300 dark:border-white/10 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors flex items-center justify-center">
+              </span> */}
+            {/* </Link> */}
+            {/* <Link to="/projects" className="px-8 py-4 rounded-full font-semibold border border-slate-300 dark:border-white/10 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors flex items-center justify-center">
               View Portfolio
-            </Link>
-          </motion.div>
+            </Link> */}
+          {/* </motion.div> */}
 
           <motion.div variants={itemVariants} className="flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
             <div className="flex items-center gap-2"><CheckCircle2 size={16} className="text-brand-orange" /> 50+ Projects</div>
@@ -85,14 +87,18 @@ export default function HeroSection() {
           <div className="absolute inset-0 flex items-center justify-center transform rotate-y-[-10deg] hover:rotate-y-0 transition-transform duration-700 ease-out">
             <div className="relative w-[110%] h-[80%] rounded-2xl bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/20 dark:border-white/10 shadow-2xl p-4 overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-white/10 dark:from-white/10 dark:to-transparent pointer-events-none" />
-              <div className="flex gap-2 mb-4">
+              <div className="flex gap-2 mb-4" >
                 <div className="w-3 h-3 rounded-full bg-red-400" />
                 <div className="w-3 h-3 rounded-full bg-amber-400" />
                 <div className="w-3 h-3 rounded-full bg-green-400" />
               </div>
-              <PlaceholderImage className="w-full h-[calc(100%-2rem)] rounded-xl" text="Main Dashboard / Site Preview" />
+              <img
+                  src={serviceLogo}
+                  alt="Main dashboard preview"
+                  className="w-full h-[calc(100%-2rem)] rounded-xl"                
+/>
 
-              {/* Floating Element 1 */}
+              {/* Floating Element 1
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -101,18 +107,18 @@ export default function HeroSection() {
                 <div className="w-8 h-8 rounded-full bg-brand-orange/20 mb-2 flex items-center justify-center"><Zap size={14} className="text-brand-orange" /></div>
                 <div className="w-24 h-2 bg-slate-200 dark:bg-white/10 rounded mb-2" />
                 <div className="w-16 h-2 bg-slate-200 dark:bg-white/10 rounded" />
-              </motion.div>
+              </motion.div> */}
 
               {/* Floating Element 2 (Founder Card) */}
-              <motion.div
+              {/* <motion.div
                 animate={{ y: [0, 15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -right-8 bottom-20 w-56 h-64 bg-white/80 dark:bg-[#1a1a1a]/80 backdrop-blur-xl border border-white/40 dark:border-white/10 rounded-xl shadow-2xl p-3 flex flex-col"
-              >
-                 <PlaceholderImage className="w-full h-3/4 rounded-lg mb-3" text="Co-Founder Image" />
+              > */}
+                 {/* <PlaceholderImage className="w-full h-3/4 rounded-lg mb-3" text="Co-Founder Image" />
                  <div className="w-20 h-3 bg-slate-800 dark:bg-white/80 rounded mb-1" />
-                 <div className="w-12 h-2 bg-slate-400 dark:bg-white/40 rounded" />
-              </motion.div>
+                 <div className="w-12 h-2 bg-slate-400 dark:bg-white/40 rounded" /> */}
+              {/* </motion.div> */}
             </div>
           </div>
         </motion.div>

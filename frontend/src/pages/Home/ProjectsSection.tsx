@@ -1,17 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
-import PlaceholderImage from '../../components/ui/PlaceholderImage';
+import { projects } from '../../data/projects';
 
-const categories = ['All', 'Web Development', 'AI Systems', 'Branding', 'Social Growth'];
-
-const projects = [
-  { id: 1, title: 'Lumina AI', category: 'AI Systems', desc: 'Enterprise automation dashboard', tech: ['React', 'Python', 'OpenAI'], colSpan: 'md:col-span-2 md:row-span-2' },
-  { id: 2, title: 'Velocity', category: 'Web Development', desc: 'High-speed e-commerce platform', tech: ['Next.js', 'Tailwind'], colSpan: 'md:col-span-1 md:row-span-1' },
-  { id: 3, title: 'Nexus Brand', category: 'Branding', desc: 'Complete identity system', tech: ['Figma', 'Illustrator'], colSpan: 'md:col-span-1 md:row-span-1' },
-  { id: 4, title: 'Aura Growth', category: 'Social Growth', desc: '10x engagement strategy', tech: ['Analytics', 'Content'], colSpan: 'md:col-span-1 md:row-span-1' },
-  { id: 5, title: 'Quantum Flow', category: 'Web Development', desc: 'Cinematic corporate site', tech: ['Vue', 'GSAP'], colSpan: 'md:col-span-2 md:row-span-1' },
-];
+const categories = ['All', 'Web Development'];
 
 export default function ProjectsSection() {
   const [activeCat, setActiveCat] = useState('All');
@@ -54,17 +47,22 @@ export default function ProjectsSection() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={project.id}
-                className={`group relative rounded-3xl overflow-hidden cursor-pointer ${project.colSpan}`}
-                onClick={() => window.location.href = `/projects/${project.id}`}
+                className={`group relative rounded-3xl overflow-hidden ${project.colSpan}`}
               >
-                <PlaceholderImage className="w-full h-full object-cover" text="Project Thumbnail / Video" />
+                <Link to={`/projects/${project.id}`} className="absolute inset-0 z-10" aria-label={`View details for ${project.title}`} />
+                {project.image && (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80" />
+                // <div className="absolute inset-0 bg-gradient-to-t from-black/90 " />
 
-                {/* Hover Video Indicator */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300">
-                  <Play className="text-white fill-white ml-1" size={24} />
-                </div>
+                {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white/20 flex items-center justify-center "> */}
+                  {/* <Play className="text-white fill-white ml-1" size={24} /> */}
+                {/* </div> */}
 
                 <div className="absolute bottom-0 left-0 w-full p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="flex items-center gap-2 mb-3">
@@ -76,7 +74,7 @@ export default function ProjectsSection() {
                   <p className="text-slate-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                     {project.desc}
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {project.tech.map(t => (
                       <span key={t} className="text-xs text-slate-400 font-mono">{t}</span>
                     ))}
@@ -86,12 +84,6 @@ export default function ProjectsSection() {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        <div className="mt-16 text-center">
-          <button className="px-8 py-4 rounded-full border border-slate-300 dark:border-white/20 text-slate-900 dark:text-white font-medium hover:bg-slate-100 dark:hover:bg-white/5 transition-colors">
-            View All Projects
-          </button>
-        </div>
       </div>
     </section>
   );

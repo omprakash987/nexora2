@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useTheme } from '../../hooks/useTheme';
+// import { Moon, Sun, Menu, X } from 'lucide-react';
+// import { useTheme } from '../../hooks/useTheme';
 import logo from '../../assets/nexoralogo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
   useEffect(() => {
@@ -112,7 +112,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className="hidden md:flex items-center gap-4">
+        {/* <div className="hidden md:flex items-center gap-4">
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300"
@@ -122,10 +122,10 @@ export default function Navbar() {
           </button>
 
          
-        </div>
+        </div> */}
 
         {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center gap-4 z-10">
+        {/* <div className="md:hidden flex items-center gap-4 z-10">
           <button
             onClick={toggleTheme}
             className="p-2 text-slate-700 dark:text-slate-300"
@@ -134,8 +134,8 @@ export default function Navbar() {
           </button>
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-slate-700 dark:text-slate-300">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+          </button> */}
+        {/* </div> */}
       </div>
 
       {/* Mobile Menu */}
