@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play } from 'lucide-react';
+// import { Play } from 'lucide-react';
 import { projects } from '../../data/projects';
 
 const categories = ['All', 'Web Development'];
