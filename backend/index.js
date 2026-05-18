@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 
 const corsOptions = {
-    origin: 'https://nexora2.onrender.com',
+    origin: 'https://nexora2-one.vercel.app/',
     credentials: true,
 };
 
