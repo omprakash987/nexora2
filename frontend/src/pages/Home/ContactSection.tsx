@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail,
-  Calendar,
   MapPin,
   Phone,
   ArrowRight,
@@ -68,9 +67,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-32 bg-white dark:bg-[#111111] relative overflow-hidden">
+    <section className="py-32 bg-white dark:bg-brand-dark relative overflow-hidden">
 
       {/* Background Glow */}
+
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-yellow/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -111,7 +111,7 @@ export default function ContactSection() {
                   </h4>
 
                   <p className="text-slate-500 dark:text-slate-400">
-                    hello@nexora.com
+                    nexoradevs24x7@gmail.com
                   </p>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function ContactSection() {
                   </h4>
 
                   <p className="text-slate-500 dark:text-slate-400">
-                    +1 (555) 123-4567
+                    +91 9311107972
                   </p>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
                   </h4>
 
                   <p className="text-slate-500 dark:text-slate-400">
-                    San Francisco, CA (Remote Worldwide)
+                    New Delhi, India (Remote Worldwide)
                   </p>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function ContactSection() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <div className="relative group">
+                <div className="relative group" aria-label="Your Name">
                   <input
                     required
                     type="text"
@@ -209,15 +209,12 @@ export default function ContactSection() {
                         name: e.target.value
                       })
                     }
-                    className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors peer placeholder-transparent"
+                    className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors placeholder:text-slate-400"
                     placeholder="Name"
                   />
 
-                  <label
-                    htmlFor="name"
-                    className="absolute left-0 top-3 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-orange"
-                  >
-                    Your Name
+                  <label htmlFor="name" className="sr-only">
+                    Name
                   </label>
                 </div>
 
@@ -233,15 +230,12 @@ export default function ContactSection() {
                         email: e.target.value
                       })
                     }
-                    className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors peer placeholder-transparent"
+                    className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors placeholder:text-slate-400"
                     placeholder="Email"
                   />
 
-                  <label
-                    htmlFor="email"
-                    className="absolute left-0 top-3 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-orange"
-                  >
-                    Email Address
+                  <label htmlFor="email" className="sr-only">
+                    Email
                   </label>
                 </div>
 
@@ -258,14 +252,11 @@ export default function ContactSection() {
                       company: e.target.value
                     })
                   }
-                  className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors peer placeholder-transparent"
-                  placeholder="Company"
+                  className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors placeholder:text-slate-400"
+                  placeholder="Company name (optional)"
                 />
 
-                <label
-                  htmlFor="company"
-                  className="absolute left-0 top-3 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-orange"
-                >
+                <label htmlFor="company" className="sr-only">
                   Company Name (Optional)
                 </label>
               </div>
@@ -282,14 +273,11 @@ export default function ContactSection() {
                       message: e.target.value
                     })
                   }
-                  className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors peer placeholder-transparent resize-none"
-                  placeholder="Message"
+                  className="w-full bg-transparent border-b-2 border-slate-300 dark:border-white/10 py-3 px-0 text-slate-900 dark:text-white focus:outline-none focus:border-brand-orange dark:focus:border-brand-orange transition-colors placeholder:text-slate-400 resize-none"
+                  placeholder="Tell us about your project"
                 />
 
-                <label
-                  htmlFor="message"
-                  className="absolute left-0 top-3 text-slate-500 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-brand-orange"
-                >
+                <label htmlFor="message" className="sr-only">
                   Tell us about your project
                 </label>
               </div>

@@ -31,13 +31,21 @@ export default function Footer() {
           <div>
             <h4 className="text-slate-900 dark:text-white font-semibold mb-6">Connect</h4>
             <ul className="flex flex-col gap-4">
-              {['Twitter', 'LinkedIn', 'Instagram', 'Dribbble'].map(social => (
-                <li key={social}>
-                  <a href="#" className="text-slate-500 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange transition-colors">
-                    {social}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="https://x.com/Nexoradevs" target="_blank" rel="noreferrer" className="text-slate-500 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange transition-colors">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/nexorardo/" target="_blank" rel="noreferrer" className="text-slate-500 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange transition-colors">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/nexora_devs?igsh=eno5eXF2ODdoeG0z" target="_blank" rel="noreferrer" className="text-slate-500 dark:text-slate-400 hover:text-brand-orange dark:hover:text-brand-orange transition-colors">
+                  Instagram
+                </a>
+              </li>
             </ul>
           </div>
         </div>

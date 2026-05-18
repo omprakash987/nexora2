@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import PlaceholderImage from '../../components/ui/PlaceholderImage';
+// import PlaceholderImage from '../../components/ui/PlaceholderImage';
 
 const testimonials = [
   {
-    name: 'Sarah Jenkins',
-    company: 'TechFlow Startup',
-    text: 'Nexora completely transformed our digital presence. The AI integration alone saved us 20 hours a week, and the new site is an absolute conversion machine.',
+    name: 'Vishal Soni',
+    company: 'Vishal Interiors',
+    text: 'Nexora delivered a modern and professional website that perfectly matched our vision. Their creativity and dedication truly impressed us, and we couldn’t be happier with the results.',
   },
   {
-    name: 'Marcus Chen',
-    company: 'Elevate E-commerce',
-    text: 'The most premium web experience we have ever had built. The attention to detail, the cinematic animations, and the lightning-fast delivery blew us away.',
+    name: 'Ashfaq Ali',
+    company: 'Talent Flow',
+    text: 'Nexora turns ideas into modern digital experiences through creative design, scalable development, and user-focused solutions tailored to each client’s vision.',
   },
   {
     name: 'Elena Rostova',
@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
 
                 <div className="flex items-center gap-4 mt-auto">
                   <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 border-2 border-brand-orange/20">
-                     <PlaceholderImage className="w-full h-full text-xs" text="IMG" />
+                     {/* <PlaceholderImage className="w-full h-full text-xs" text="IMG" /> */}
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 dark:text-white text-lg">{testimonials[current].name}</h4>
