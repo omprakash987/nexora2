@@ -50,6 +50,7 @@ const SendEmail = ({ quote,className }: SendEmailProps) => {
 
       const response = await fetch(
         "https://nexora2.onrender.com/api/email/sendEmail",
+        // "http://localhost:5000/api/email/sendEmail",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

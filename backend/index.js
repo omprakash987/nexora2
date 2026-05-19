@@ -8,7 +8,10 @@ const app = express();
 dotenv.config();
 
 const corsOptions = {
-    origin: 'https://nexora2-one.vercel.app/',
+    origin: [
+    "http://localhost:5173",
+    "https://nexora2-one.vercel.app"
+  ],
     credentials: true,
 };
 
