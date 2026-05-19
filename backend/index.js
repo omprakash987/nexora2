@@ -10,7 +10,7 @@ dotenv.config();
 const corsOptions = {
     origin: [
     "http://localhost:5173",
-    "https://nexora2-one.vercel.app"
+    "https://nexora2-pied.vercel.app"
   ],
     credentials: true,
 };
