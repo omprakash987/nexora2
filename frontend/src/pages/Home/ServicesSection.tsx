@@ -5,8 +5,10 @@ import {
   TrendingUp,
   Sparkles,
   Layers,
- type LucideIcon
+  type LucideIcon
 } from 'lucide-react';
+
+import { Link } from 'react-router-dom';
 
 type Service = {
   icon: LucideIcon;
@@ -78,40 +80,43 @@ export default function ServicesSection() {
             const Icon = srv.icon;
 
             return (
-              <motion.a
+              <motion.div
                 key={srv.slug}
-                href={`/services/${srv.slug}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="group relative block rounded-3xl border border-slate-200 bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,122,0,0.1)] dark:border-white/5 dark:bg-[#1a1a1a]"
               >
-                {/* Hover Gradient */}
-                <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-orange/0 to-brand-orange/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <Link
+                  to={`/services/${srv.slug}`}
+                  className="group relative block rounded-3xl border border-slate-200 bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,122,0,0.1)] dark:border-white/5 dark:bg-[#1a1a1a]"
+                >
+                  {/* Hover Gradient */}
+                  <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-orange/0 to-brand-orange/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                {/* Icon */}
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 transition-transform duration-300 group-hover:scale-110 dark:border-white/5 dark:bg-black/50">
-                  <Icon size={32} className={srv.color} />
-                </div>
+                  {/* Icon */}
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 transition-transform duration-300 group-hover:scale-110 dark:border-white/5 dark:bg-black/50">
+                    <Icon size={32} className={srv.color} />
+                  </div>
 
-                {/* Title */}
-                <h4 className="mb-4 text-xl font-bold text-slate-900 dark:text-white">
-                  {srv.title}
-                </h4>
+                  {/* Title */}
+                  <h4 className="mb-4 text-xl font-bold text-slate-900 dark:text-white">
+                    {srv.title}
+                  </h4>
 
-                {/* Description */}
-                <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
-                  {srv.desc}
-                </p>
+                  {/* Description */}
+                  <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
+                    {srv.desc}
+                  </p>
 
-                {/* CTA */}
-                <div className="flex items-center gap-2 font-medium text-brand-orange transition-all group-hover:gap-3">
-                  Learn more
-                  <span className="text-lg">→</span>
-                </div>
-              </motion.a>
+                  {/* CTA */}
+                  <div className="flex items-center gap-2 font-medium text-brand-orange transition-all duration-300 group-hover:gap-3">
+                    Learn more
+                    <span className="text-lg">→</span>
+                  </div>
+                </Link>
+              </motion.div>
             );
           })}
         </div>
