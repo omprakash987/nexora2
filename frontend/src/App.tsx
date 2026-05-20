@@ -10,7 +10,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* Detail Pages */}
           <Route path="projects/:id" element={<ProjectDetail />} />
           <Route path="services/:id" element={<ServiceDetail />} />
           <Route path="*" element={<Navigate to="/" replace />} />
