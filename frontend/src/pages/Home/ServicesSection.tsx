@@ -4,7 +4,6 @@ import {
   Cpu,
   TrendingUp,
   Sparkles,
-  Layers,
   type LucideIcon
 } from 'lucide-react';
 
