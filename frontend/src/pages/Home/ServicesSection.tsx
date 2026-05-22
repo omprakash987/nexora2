@@ -23,7 +23,7 @@ const services: Service[] = [
     icon: MonitorSmartphone,
     color: 'text-brand-orange',
     slug: 'website-development',
-    title: 'Website Development',
+    title: 'Web/App Development',
     desc: 'High-performance, cinematic, and responsive web experiences built with modern architecture.'
   },
   {
@@ -46,13 +46,6 @@ const services: Service[] = [
     slug: 'branding',
     title: 'Branding',
     desc: 'Premium identity design that makes your business unforgettable and builds instant trust.'
-  },
-  {
-    icon: Layers,
-    color: 'text-blue-400',
-    slug: 'business-systems',
-    title: 'Business Systems',
-    desc: 'Scalable backend architectures and interconnected workflows for ultimate efficiency.'
   }
 ];
 
