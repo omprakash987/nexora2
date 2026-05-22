@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // import { Play } from 'lucide-react';
 import { projects } from '../../data/projects';
 
-const categories = ['All', 'Web Development'];
+const categories = ['All', 'Web Development', 'Social Media Growth'];
 
 export default function ProjectsSection() {
   const [activeCat, setActiveCat] = useState('All');
@@ -58,7 +58,7 @@ export default function ProjectsSection() {
                   />
                 )}
 
-                // <div className="absolute inset-0 bg-gradient-to-t from-black/90 " />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 " /> */}
 
                 {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white/20 flex items-center justify-center "> */}
                   {/* <Play className="text-white fill-white ml-1" size={24} /> */}
