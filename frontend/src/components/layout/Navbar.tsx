@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-// import { Moon, Sun, Menu, X } from 'lucide-react';
-// import { useTheme } from '../../hooks/useTheme';
+import { Menu, X } from 'lucide-react';
 import logo from '../../assets/nexoralogo.png';
 
 export default function Navbar() {
@@ -125,17 +124,14 @@ export default function Navbar() {
         </div> */}
 
         {/* Mobile Toggle */}
-        {/* <div className="md:hidden flex items-center gap-4 z-10">
-          <button
-            onClick={toggleTheme}
-            className="p-2 text-slate-700 dark:text-slate-300"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-slate-700 dark:text-slate-300">
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button> */}
-        {/* </div> */}
+<div className="md:hidden flex items-center z-10">
+  <button
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    className="text-slate-700 dark:text-slate-300"
+  >
+    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
+</div>
       </div>
 
       {/* Mobile Menu */}
